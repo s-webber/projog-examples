@@ -1,0 +1,11 @@
+*.class
+*.zip
+
+.classpath
+.gradle
+.project
+.settings
+
+bin
+build
+target
