@@ -24,6 +24,8 @@ import org.projog.core.term.Term;
 /**
  * <code>uppercase(X,Y)</code> - succeeds if the atom represented by Y is equal to an upper case version of the atom
  * represented by X.
+ *
+ * @see RetryablePredicateExample
  */
 public class SingletonPredicateExample extends AbstractSingletonPredicate {
    @Override
