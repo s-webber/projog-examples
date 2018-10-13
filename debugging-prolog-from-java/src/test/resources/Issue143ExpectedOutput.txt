@@ -1,0 +1,195 @@
+FIRST QUERY
+---------------------------------------
+ANSWER: roomA is the brother of roomB
+Matched testRule/2 clause number 1
+Clause: testRule(A, B) :- test(Electricity, A, B)
+Output: testRule(roomA, roomB)
+
+Matched test/3 clause number 1
+Clause: test(e1, roomA, roomB)
+Output: test(e1, roomA, roomB)
+
+---------------------------------------
+ANSWER: roomC is the brother of roomB
+Matched testRule/2 clause number 1
+Clause: testRule(A, B) :- test(Electricity, A, B)
+Output: testRule(roomC, roomB)
+
+Matched test/3 clause number 2
+Clause: test(e1, roomC, roomB)
+Output: test(e1, roomC, roomB)
+
+---------------------------------------
+ANSWER: roomD is the brother of roomB
+Matched testRule/2 clause number 1
+Clause: testRule(A, B) :- test(Electricity, A, B)
+Output: testRule(roomD, roomB)
+
+Matched test/3 clause number 3
+Clause: test(e2, roomD, roomB)
+Output: test(e2, roomD, roomB)
+
+---------------------------------------
+ANSWER: roomE is the brother of roomB
+Matched testRule/2 clause number 1
+Clause: testRule(A, B) :- test(Electricity, A, B)
+Output: testRule(roomE, roomB)
+
+Matched test/3 clause number 4
+Clause: test(e3, roomE, roomB)
+Output: test(e3, roomE, roomB)
+
+SECOND QUERY
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 1
+Clause: location(fridge, roomA, home)
+Output: location(fridge, roomA, home)
+
+Matched location/3 clause number 4
+Clause: location(computer, roomC, home)
+Output: location(computer, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 1
+Clause: location(fridge, roomA, home)
+Output: location(fridge, roomA, home)
+
+Matched location/3 clause number 5
+Clause: location(radio, roomC, home)
+Output: location(radio, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 1
+Clause: location(fridge, roomA, home)
+Output: location(fridge, roomA, home)
+
+Matched location/3 clause number 6
+Clause: location(modem, roomC, home)
+Output: location(modem, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 2
+Clause: location(microwave, roomA, home)
+Output: location(microwave, roomA, home)
+
+Matched location/3 clause number 4
+Clause: location(computer, roomC, home)
+Output: location(computer, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 2
+Clause: location(microwave, roomA, home)
+Output: location(microwave, roomA, home)
+
+Matched location/3 clause number 5
+Clause: location(radio, roomC, home)
+Output: location(radio, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 2
+Clause: location(microwave, roomA, home)
+Output: location(microwave, roomA, home)
+
+Matched location/3 clause number 6
+Clause: location(modem, roomC, home)
+Output: location(modem, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 3
+Clause: location(oven, roomA, home)
+Output: location(oven, roomA, home)
+
+Matched location/3 clause number 4
+Clause: location(computer, roomC, home)
+Output: location(computer, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 3
+Clause: location(oven, roomA, home)
+Output: location(oven, roomA, home)
+
+Matched location/3 clause number 5
+Clause: location(radio, roomC, home)
+Output: location(radio, roomC, home)
+
+---------------------------------------
+Matched testRule/2 clause number 2
+Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Output: testRule(roomA, roomC)
+
+Matched not_test/3 clause number 1
+Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Output: not_test(Electricity, roomA, roomC)
+
+Matched location/3 clause number 3
+Clause: location(oven, roomA, home)
+Output: location(oven, roomA, home)
+
+Matched location/3 clause number 6
+Clause: location(modem, roomC, home)
+Output: location(modem, roomC, home)
+

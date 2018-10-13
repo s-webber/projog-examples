@@ -12,7 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TraceExampleTest {
+public class Issue143Test {
    private final ByteArrayOutputStream redirectedOut = new ByteArrayOutputStream();
    private final PrintStream originalOut = System.out;
 
@@ -23,13 +23,13 @@ public class TraceExampleTest {
 
    @Test
    public void test() throws IOException {
-      TraceExample.main(new String[0]);
+      Issue143.main(new String[0]);
       assertEquals(getExpectedOutput(), redirectedOut.toString());
    }
 
    private String getExpectedOutput() throws IOException {
       StringBuilder sb = new StringBuilder();
-      for (String line : Files.readAllLines(new File("src/test/resources/TraceExampleTestExpectedOutput.txt").toPath())) {
+      for (String line : Files.readAllLines(new File("src/test/resources/Issue143ExpectedOutput.txt").toPath())) {
          sb.append(line);
          sb.append(System.lineSeparator());
       }
