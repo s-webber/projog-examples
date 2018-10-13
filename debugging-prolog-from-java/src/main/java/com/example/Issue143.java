@@ -28,7 +28,7 @@ public class Issue143 {
       QueryResult r1 = s1.getResult();
       while (r1.next()) {
          System.out.println("---------------------------------------");
-         System.out.println("ANSWER: " + r1.getTerm("X") + " is the brother of " + r1.getTerm("Y"));
+         System.out.println("ANSWER: X = " + r1.getTerm("X") + " Y = " + r1.getTerm("Y"));
          log(stack);
       }
 

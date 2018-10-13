@@ -1,6 +1,6 @@
 FIRST QUERY
 ---------------------------------------
-ANSWER: roomA is the brother of roomB
+ANSWER: X = roomA Y = roomB
 Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
@@ -12,7 +12,7 @@ Clause: test(e1, roomA, roomB)
 Output: test(e1, roomA, roomB)
 
 ---------------------------------------
-ANSWER: roomC is the brother of roomB
+ANSWER: X = roomC Y = roomB
 Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
@@ -24,7 +24,7 @@ Clause: test(e1, roomC, roomB)
 Output: test(e1, roomC, roomB)
 
 ---------------------------------------
-ANSWER: roomD is the brother of roomB
+ANSWER: X = roomD Y = roomB
 Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
@@ -36,7 +36,7 @@ Clause: test(e2, roomD, roomB)
 Output: test(e2, roomD, roomB)
 
 ---------------------------------------
-ANSWER: roomE is the brother of roomB
+ANSWER: X = roomE Y = roomB
 Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
