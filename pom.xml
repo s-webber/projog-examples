@@ -11,5 +11,6 @@
     <modules>
         <module>calling-java-from-prolog</module>
         <module>calling-prolog-from-java</module>
+        <module>debugging-prolog-from-java</module>
     </modules>
 </project>
