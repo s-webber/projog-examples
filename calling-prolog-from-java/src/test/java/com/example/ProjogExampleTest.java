@@ -36,7 +36,7 @@ public class ProjogExampleTest {
    }
 
    @Test
-   public void compilationDisabled() {
+   public void test() {
       ProjogExample.main(new String[0]);
       assertEquals(EXPECTED_OUTPUT, redirectedOut.toString().replace(System.lineSeparator(), "\n"));
    }
