@@ -1,6 +1,8 @@
 FIRST QUERY
 ---------------------------------------
 ANSWER: roomA is the brother of roomB
+Input: testRule(X, Y)
+
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
 Output: testRule(roomA, roomB)
@@ -11,6 +13,8 @@ Output: test(e1, roomA, roomB)
 
 ---------------------------------------
 ANSWER: roomC is the brother of roomB
+Input: testRule(X, Y)
+
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
 Output: testRule(roomC, roomB)
@@ -21,6 +25,8 @@ Output: test(e1, roomC, roomB)
 
 ---------------------------------------
 ANSWER: roomD is the brother of roomB
+Input: testRule(X, Y)
+
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
 Output: testRule(roomD, roomB)
@@ -31,6 +37,8 @@ Output: test(e2, roomD, roomB)
 
 ---------------------------------------
 ANSWER: roomE is the brother of roomB
+Input: testRule(X, Y)
+
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
 Output: testRule(roomE, roomB)
@@ -41,6 +49,8 @@ Output: test(e3, roomE, roomB)
 
 SECOND QUERY
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -58,6 +68,8 @@ Clause: location(computer, roomC, home)
 Output: location(computer, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -75,6 +87,8 @@ Clause: location(radio, roomC, home)
 Output: location(radio, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -92,6 +106,8 @@ Clause: location(modem, roomC, home)
 Output: location(modem, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -109,6 +125,8 @@ Clause: location(computer, roomC, home)
 Output: location(computer, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -126,6 +144,8 @@ Clause: location(radio, roomC, home)
 Output: location(radio, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -143,6 +163,8 @@ Clause: location(modem, roomC, home)
 Output: location(modem, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -160,6 +182,8 @@ Clause: location(computer, roomC, home)
 Output: location(computer, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)
@@ -177,6 +201,8 @@ Clause: location(radio, roomC, home)
 Output: location(radio, roomC, home)
 
 ---------------------------------------
+Input: testRule(roomA, roomC)
+
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
 Output: testRule(roomA, roomC)

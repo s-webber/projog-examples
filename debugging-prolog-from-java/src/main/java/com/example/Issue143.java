@@ -45,7 +45,14 @@ public class Issue143 {
    }
 
    private static void log(final CallStack stack) {
+      boolean first = true;
       for (CallStack.Element e : stack) {
+         if (first) {
+            System.out.println("Input: " + e.getInputArgs());
+            System.out.println();
+            first = false;
+         }
+
          System.out.println("Matched " + e.getPredicateKey() + " clause number " + e.getClauseIdx());
          System.out.println("Clause: " + e.getClause());
          System.out.println("Output: " + e.getOutputArgs());
