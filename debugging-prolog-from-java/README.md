@@ -4,7 +4,7 @@
 
 This module provides an example of how you can obtain debug information about Prolog queries that are called from Java programs using [Projog](http://www.projog.org/).
 
-`src/main/java/com/example/TraceExample.java` performs queries on the facts and rules contained in `src/main/resources/trace_example_facts_and_rules.pl` and produces output that matches what is contained in `src/test/resources/trace_example_expected_output`.
+`src/main/java/com/example/TraceExample.java` performs queries on the facts and rules contained in `src/main/resources/TraceExample.pl` and produces output that matches what is contained in `src/test/resources/TraceExampleTestExpectedOutput.txt`.
 
 Note that this module has a dependency on the `0.3.0-SNAPSHOT` version of `projog-core`.
 
