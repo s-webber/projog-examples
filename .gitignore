@@ -1,5 +1,6 @@
 *.class
 *.zip
+*.tmp
 
 .classpath
 .gradle
