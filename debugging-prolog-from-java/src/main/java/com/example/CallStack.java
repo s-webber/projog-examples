@@ -8,6 +8,7 @@ import org.projog.core.PredicateKey;
 import org.projog.core.SpyPoints.SpyPointEvent;
 import org.projog.core.event.ProjogEvent;
 import org.projog.core.event.ProjogEventType;
+import org.projog.core.udp.ClauseModel;
 
 class CallStack implements Iterable<CallStack.Element> {
    private final List<Element> elements = new ArrayList<>();
@@ -71,20 +72,24 @@ class CallStack implements Iterable<CallStack.Element> {
          return first.getPredicateKey();
       }
 
-      int getClauseIdx() {
-         return second.getClauseIdx();
+      int getClauseNumber() {
+         return second.getClauseNumber();
       }
 
-      String getClause() {
+      String getFormattedClause() {
          return second.getFormattedClause();
       }
 
-      String getInputArgs() {
+      String getFormattedInput() {
          return first.getFormattedTerm();
       }
 
-      String getOutputArgs() {
+      String getFormattedOutput() {
          return second.getFormattedTerm();
+      }
+
+      ClauseModel getClauseModel() {
+         return second.getClauseModel();
       }
    }
 }

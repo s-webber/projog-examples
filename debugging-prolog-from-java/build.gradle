@@ -1,24 +1,17 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'org.projog'
-version = '0.1.0-SNAPSHOT'
-
-description = """debugging-prolog-from-java"""
-
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
 
-
-
 repositories {
-        
      maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
      maven { url "http://repo.maven.apache.org/maven2" }
 }
+
 dependencies {
     compile group: 'org.projog', name: 'projog-core', version:'0.3.0-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version:'4.12'

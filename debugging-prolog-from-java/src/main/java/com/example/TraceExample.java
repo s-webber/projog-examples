@@ -58,10 +58,10 @@ public class TraceExample {
 
    private static void log(final CallStack stack) {
       for (CallStack.Element e : stack) {
-         System.out.println("Matched " + e.getPredicateKey() + " clause number " + e.getClauseIdx());
-         System.out.println("Clause: " + e.getClause());
-         System.out.println("Input:  " + e.getInputArgs());
-         System.out.println("Output: " + e.getOutputArgs());
+         System.out.println("Matched " + e.getPredicateKey() + " clause number " + e.getClauseNumber());
+         System.out.println("Clause: " + e.getFormattedClause());
+         System.out.println("Input:  " + e.getFormattedInput());
+         System.out.println("Output: " + e.getFormattedOutput());
          System.out.println();
       }
    }
