@@ -8,9 +8,32 @@ This module provides an example of how you can obtain debug information about Pr
 
 Note that this module has a dependency on the `0.3.0-SNAPSHOT` version of `projog-core`.
 
-## `Could not resolve dependencies` error
+## Resolving Gradle build errors
 
-If when attempting to do a Maven build of this module you get an exception like:
+If when doing a Gradle build you get a `Could not resolve all files for configuration` error like:
+
+```
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Could not resolve all files for configuration ':compileClasspath'.
+> Could not find org.projog:projog-core:0.3.0-SNAPSHOT.
+```
+
+then you will need to add the URL of the snapshots repository to your `build.gradle` file. e.g.
+
+```
+repositories {
+   maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+   maven { url "http://repo.maven.apache.org/maven2" }
+}
+```
+
+See [this projects build.gradle file](https://raw.githubusercontent.com/s-webber/projog-examples/master/debugging-prolog-from-java/build.gradle) for a full example of suitable `build.gradle` file.
+
+## Resolving Maven build errors
+
+If when attempting to do a Maven build of this module you get a `Could not resolve dependencies` error like:
 
 ```
 [ERROR] Failed to execute goal on project debugging-prolog-from-java: Could not
