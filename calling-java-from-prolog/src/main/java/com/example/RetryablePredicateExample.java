@@ -1,6 +1,7 @@
 package com.example;
 
-import org.projog.core.function.AbstractRetryablePredicate;
+import org.projog.core.function.AbstractPredicate;
+import org.projog.core.function.AbstractPredicateFactory;
 import org.projog.core.term.Atom;
 import org.projog.core.term.Term;
 import org.projog.core.term.TermUtils;
@@ -36,35 +37,40 @@ import org.projog.core.term.TermUtils;
  *
  * @see SingletonPredicateExample
  */
-public class RetryablePredicateExample extends AbstractRetryablePredicate {
-   private String[] split;
-   private int idx;
-
+public class RetryablePredicateExample extends AbstractPredicateFactory {
    @Override
-   public RetryablePredicateExample getPredicate(Term arg1, Term arg2) {
-      return new RetryablePredicateExample();
+   public Predicate getPredicate(Term arg1, Term arg2) {
+      String csv = TermUtils.getAtomName(arg1);
+      String[] split = csv.split(",");
+      return new Predicate(split, arg2);
    }
 
-   @Override
-   public boolean evaluate(Term arg1, Term arg2) {
-      if (split == null) {
-         String csv = TermUtils.getAtomName(arg1);
-         split = csv.split(",");
+   private static class Predicate extends AbstractPredicate {
+      private final String[] split;
+      private final Term target;
+      private int idx;
+
+      Predicate(String[] split, Term target) {
+         this.split = split;
+         this.target = target;
       }
 
-      while (idx < split.length) {
-         arg2.backtrack();
-         String next = split[idx++];
-         if (arg2.unify(new Atom(next))) {
-            return true;
+      @Override
+      public boolean evaluate() {
+         while (idx < split.length) {
+            target.backtrack();
+            String next = split[idx++];
+            if (target.unify(new Atom(next))) {
+               return true;
+            }
          }
+
+         return false;
       }
 
-      return false;
-   }
-
-   @Override
-   public boolean couldReEvaluationSucceed() {
-      return idx < split.length;
+      @Override
+      public boolean couldReevaluationSucceed() {
+         return idx < split.length;
+      }
    }
 }

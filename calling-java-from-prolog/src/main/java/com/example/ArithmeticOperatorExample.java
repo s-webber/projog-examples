@@ -1,9 +1,9 @@
 package com.example;
 
-import org.projog.core.function.math.AbstractOneArgumentCalculatable;
+import org.projog.core.function.math.AbstractUnaryArithmeticOperator;;
 
 /* TEST
- ?- pj_add_calculatable(triple/1, 'com.example.CalculatableExample').
+ ?- pj_add_arithmetic_operator(triple/1, 'com.example.ArithmeticOperatorExample').
 
  %TRUE 9 is triple(3)
  %FALSE 9 is triple(4)
@@ -23,7 +23,7 @@ import org.projog.core.function.math.AbstractOneArgumentCalculatable;
 /**
  * <code>triple</code> - multiples the given number by 3.
  */
-public class CalculatableExample extends AbstractOneArgumentCalculatable {
+public class ArithmeticOperatorExample extends AbstractUnaryArithmeticOperator {
 
    @Override
    protected double calculateDouble(double input) {
