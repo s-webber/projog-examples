@@ -5,10 +5,12 @@ Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
+Fact?   false
 Output: testRule(roomA, roomB)
 
 Matched test/3 clause number 1
 Clause: test(e1, roomA, roomB)
+Fact?   true
 Output: test(e1, roomA, roomB)
 
 ---------------------------------------
@@ -17,10 +19,12 @@ Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
+Fact?   false
 Output: testRule(roomC, roomB)
 
 Matched test/3 clause number 2
 Clause: test(e1, roomC, roomB)
+Fact?   true
 Output: test(e1, roomC, roomB)
 
 ---------------------------------------
@@ -29,10 +33,12 @@ Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
+Fact?   false
 Output: testRule(roomD, roomB)
 
 Matched test/3 clause number 3
 Clause: test(e2, roomD, roomB)
+Fact?   true
 Output: test(e2, roomD, roomB)
 
 ---------------------------------------
@@ -41,10 +47,12 @@ Input: testRule(X, Y)
 
 Matched testRule/2 clause number 1
 Clause: testRule(A, B) :- test(Electricity, A, B)
+Fact?   false
 Output: testRule(roomE, roomB)
 
 Matched test/3 clause number 4
 Clause: test(e3, roomE, roomB)
+Fact?   true
 Output: test(e3, roomE, roomB)
 
 SECOND QUERY
@@ -53,18 +61,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 1
 Clause: location(fridge, roomA, home)
+Fact?   true
 Output: location(fridge, roomA, home)
 
 Matched location/3 clause number 4
 Clause: location(computer, roomC, home)
+Fact?   true
 Output: location(computer, roomC, home)
 
 ---------------------------------------
@@ -72,18 +84,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 1
 Clause: location(fridge, roomA, home)
+Fact?   true
 Output: location(fridge, roomA, home)
 
 Matched location/3 clause number 5
 Clause: location(radio, roomC, home)
+Fact?   true
 Output: location(radio, roomC, home)
 
 ---------------------------------------
@@ -91,18 +107,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 1
 Clause: location(fridge, roomA, home)
+Fact?   true
 Output: location(fridge, roomA, home)
 
 Matched location/3 clause number 6
 Clause: location(modem, roomC, home)
+Fact?   true
 Output: location(modem, roomC, home)
 
 ---------------------------------------
@@ -110,18 +130,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 2
 Clause: location(microwave, roomA, home)
+Fact?   true
 Output: location(microwave, roomA, home)
 
 Matched location/3 clause number 4
 Clause: location(computer, roomC, home)
+Fact?   true
 Output: location(computer, roomC, home)
 
 ---------------------------------------
@@ -129,18 +153,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 2
 Clause: location(microwave, roomA, home)
+Fact?   true
 Output: location(microwave, roomA, home)
 
 Matched location/3 clause number 5
 Clause: location(radio, roomC, home)
+Fact?   true
 Output: location(radio, roomC, home)
 
 ---------------------------------------
@@ -148,18 +176,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 2
 Clause: location(microwave, roomA, home)
+Fact?   true
 Output: location(microwave, roomA, home)
 
 Matched location/3 clause number 6
 Clause: location(modem, roomC, home)
+Fact?   true
 Output: location(modem, roomC, home)
 
 ---------------------------------------
@@ -167,18 +199,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 3
 Clause: location(oven, roomA, home)
+Fact?   true
 Output: location(oven, roomA, home)
 
 Matched location/3 clause number 4
 Clause: location(computer, roomC, home)
+Fact?   true
 Output: location(computer, roomC, home)
 
 ---------------------------------------
@@ -186,18 +222,22 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 3
 Clause: location(oven, roomA, home)
+Fact?   true
 Output: location(oven, roomA, home)
 
 Matched location/3 clause number 5
 Clause: location(radio, roomC, home)
+Fact?   true
 Output: location(radio, roomC, home)
 
 ---------------------------------------
@@ -205,17 +245,21 @@ Input: testRule(roomA, roomC)
 
 Matched testRule/2 clause number 2
 Clause: testRule(A, B) :- not_test(Electricity, A, B) , location(_, A, home) , location(_, B, home)
+Fact?   false
 Output: testRule(roomA, roomC)
 
 Matched not_test/3 clause number 1
 Clause: not_test(Electricity, A, B) :- \+ test(Electricity, A, B)
+Fact?   false
 Output: not_test(Electricity, roomA, roomC)
 
 Matched location/3 clause number 3
 Clause: location(oven, roomA, home)
+Fact?   true
 Output: location(oven, roomA, home)
 
 Matched location/3 clause number 6
 Clause: location(modem, roomC, home)
+Fact?   true
 Output: location(modem, roomC, home)
 

@@ -5,6 +5,8 @@ import java.io.File;
 import org.projog.api.Projog;
 import org.projog.api.QueryResult;
 import org.projog.api.QueryStatement;
+import org.projog.core.term.Term;
+import org.projog.core.term.TermType;
 
 /**
  * @see https://github.com/s-webber/projog/issues/143
@@ -55,8 +57,31 @@ public class Issue143 {
 
          System.out.println("Matched " + e.getPredicateKey() + " clause number " + e.getClauseNumber());
          System.out.println("Clause: " + e.getFormattedClause());
+         System.out.println("Fact?   " + isFact(e));
          System.out.println("Output: " + e.getFormattedOutput());
          System.out.println();
       }
+   }
+
+   /**
+    * Returns {@code true} if the clause of the given {@code CallStack.Element} is a fact, rather than a rule.
+    * <p>
+    * Assumes that a clause is a fact if its antecedant is "true". For example both of these three clauses would be
+    * considered as facts: "x(y)" and "x(y) :- true". Note that this behaviour may not necessarily match people's
+    * expectations - for example when the clause is the first clause of a tail-recursive predicate. e.g.:
+    * </p>
+    * <pre>
+    * list([]).
+    * list([X|Xs]) :- list(Xs).
+    * </pre>
+    * <p>
+    * In this case the first clause - <code>list([])</code> will be considered as a fact by this method, when some
+    * people may consider it a rule.
+    * </p>
+    */
+   private static boolean isFact(CallStack.Element e) {
+      Term antecedant = e.getClauseModel().getAntecedant();
+      boolean isFact = antecedant.getType() == TermType.ATOM && antecedant.getName().equals("true");
+      return isFact;
    }
 }
