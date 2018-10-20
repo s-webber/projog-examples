@@ -81,7 +81,6 @@ public class Issue143 {
     */
    private static boolean isFact(CallStack.Element e) {
       Term antecedant = e.getClauseModel().getAntecedant();
-      boolean isFact = antecedant.getType() == TermType.ATOM && antecedant.getName().equals("true");
-      return isFact;
+      return antecedant.getType() == TermType.ATOM && antecedant.getName().equals("true");
    }
 }
