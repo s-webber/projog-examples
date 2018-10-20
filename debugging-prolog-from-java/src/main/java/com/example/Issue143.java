@@ -66,7 +66,7 @@ public class Issue143 {
    /**
     * Returns {@code true} if the clause of the given {@code CallStack.Element} is a fact, rather than a rule.
     * <p>
-    * Assumes that a clause is a fact if its antecedant is "true". For example both of these three clauses would be
+    * Assumes that a clause is a fact if its antecedant is "true". For example, both of these clauses would be
     * considered as facts: "x(y)" and "x(y) :- true". Note that this behaviour may not necessarily match people's
     * expectations - for example when the clause is the first clause of a tail-recursive predicate. e.g.:
     * </p>
@@ -75,8 +75,8 @@ public class Issue143 {
     * list([X|Xs]) :- list(Xs).
     * </pre>
     * <p>
-    * In this case the first clause - <code>list([])</code> will be considered as a fact by this method, when some
-    * people may consider it a rule.
+    * then {@code true} will be returned from this method when the given element refers to the first clause - i.e.
+    * {@code list([])}. Some people may instead expect this method to return {@code false} in that circumstance.
     * </p>
     */
    private static boolean isFact(CallStack.Element e) {
