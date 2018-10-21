@@ -1,6 +1,6 @@
 package com.example;
 
-import org.projog.core.function.math.AbstractUnaryArithmeticOperator;;
+import org.projog.core.function.math.AbstractUnaryArithmeticOperator;
 
 /* TEST
  ?- pj_add_arithmetic_operator(triple/1, 'com.example.ArithmeticOperatorExample').
