@@ -20,16 +20,19 @@ class CallStack implements Iterable<CallStack.Element> {
    void record(ProjogEvent projogEvent) {
       ProjogEventType type = projogEvent.getType();
       if (type == ProjogEventType.CALL) {
-         called((SpyPointEvent) projogEvent.getDetails());
+         called(projogEvent);
       } else if (type == ProjogEventType.EXIT) {
          matched((SpyPointEvent) projogEvent.getDetails());
       } else if (type == ProjogEventType.FAIL) {
          failed((SpyPointEvent) projogEvent.getDetails());
+      } else if (type == ProjogEventType.REDO) {
+         retrying(projogEvent);
       }
    }
 
-   private void called(SpyPointEvent spe) {
-      Element e = new Element(spe);
+   private void called(ProjogEvent projogEvent) {
+      SpyPointEvent spyPointEvent = (SpyPointEvent) projogEvent.getDetails();
+      Element e = new Element(spyPointEvent, projogEvent.getSource());
       elements.add(e);
    }
 
@@ -55,17 +58,28 @@ class CallStack implements Iterable<CallStack.Element> {
       }
    }
 
+   private void retrying(ProjogEvent projogEvent) {
+      for (Element element : elements) {
+         if (element.source == projogEvent.getSource()) {
+            element.second = null;
+            return;
+         }
+      }
+   }
+
    @Override
    public Iterator<Element> iterator() {
       return elements.iterator();
    }
 
    static class Element {
+      private final Object source;
       private final SpyPointEvent first;
       private SpyPointEvent second;
 
-      private Element(SpyPointEvent first) {
+      private Element(SpyPointEvent first, Object source) {
          this.first = first;
+         this.source = source;
       }
 
       PredicateKey getPredicateKey() {

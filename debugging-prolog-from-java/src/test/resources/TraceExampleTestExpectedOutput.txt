@@ -335,12 +335,12 @@ Output: siblings(todd, rod)
 
 Matched parents/3 clause number 1
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(ned, maude, Y)
 Output: parents(ned, maude, todd)
 
 Matched father/2 clause number 5
 Clause: father(ned, todd)
-Input:  father(F, X)
+Input:  father(ned, Y)
 Output: father(ned, todd)
 
 Matched mother/2 clause number 5
@@ -445,7 +445,7 @@ Output: siblings(todd, rod)
 
 Matched parents/3 clause number 1
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(ned, maude, Y)
 Output: parents(ned, maude, todd)
 
 Matched parents/3 clause number 1

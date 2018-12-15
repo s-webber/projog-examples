@@ -19,7 +19,7 @@ import org.projog.core.term.Term;
  %ANSWER X=HELLO, WORLD!
 
  %QUERY uppercase(X, 'HELLO, WORLD!')
- %ERROR Expected an atom but got: NAMED_VARIABLE with value: X
+ %ERROR Expected an atom but got: VARIABLE with value: X
  */
 /**
  * <code>uppercase(X,Y)</code> - succeeds if the atom represented by Y is equal to an upper case version of the atom

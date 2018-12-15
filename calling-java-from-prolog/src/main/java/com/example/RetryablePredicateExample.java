@@ -24,7 +24,7 @@ import org.projog.core.term.TermUtils;
  %FALSE split('a,b,c', z)
 
  %QUERY split(X, a)
- %ERROR Expected an atom but got: NAMED_VARIABLE with value: X
+ %ERROR Expected an atom but got: VARIABLE with value: X
 
  %QUERY split(42, a)
  %ERROR Expected an atom but got: INTEGER with value: 42
