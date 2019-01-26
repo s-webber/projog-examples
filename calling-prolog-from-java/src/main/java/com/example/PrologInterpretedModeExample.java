@@ -5,14 +5,21 @@ import java.io.File;
 import org.projog.api.Projog;
 import org.projog.api.QueryResult;
 import org.projog.api.QueryStatement;
+import org.projog.core.ProjogDefaultProperties;
+import org.projog.core.ProjogProperties;
 import org.projog.core.term.Atom;
 
-public class ProjogExample {
+public class PrologInterpretedModeExample {
    public static void main(String[] args) {
-      // Create a new Projog instance
-      // Using the empty constructor causes Projog to operate with the default configuration.
-      // The default configuration is to operate in "compiled" mode which causes user-defined predicates to be compiled to Java at runtime.
-      Projog p = new Projog();
+      // Create a new Projog instance that is configured with "runtime compilation" disabled.
+      // When "runtime compilation" is disabled then Projog will operate in "interpreted" mode rather than compiling user-defined predicates to Java at runtime.
+      ProjogProperties projogProperties = new ProjogDefaultProperties() {
+         @Override
+         public boolean isRuntimeCompilationEnabled() {
+            return false;
+         }
+      };
+      Projog p = new Projog(projogProperties);
 
       // Read Prolog facts and rules from a file to populate the "Projog" instance created in step 1.
       p.consultFile(new File("src/main/resources/test.pl"));
