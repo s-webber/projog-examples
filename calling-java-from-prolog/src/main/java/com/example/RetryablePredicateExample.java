@@ -1,7 +1,7 @@
 package com.example;
 
-import org.projog.core.function.AbstractPredicate;
-import org.projog.core.function.AbstractPredicateFactory;
+import org.projog.core.predicate.AbstractPredicateFactory;
+import org.projog.core.predicate.Predicate;
 import org.projog.core.term.Atom;
 import org.projog.core.term.Term;
 import org.projog.core.term.TermUtils;
@@ -35,22 +35,22 @@ import org.projog.core.term.TermUtils;
 /**
  * <code>split(X,Y)</code> - compares Y to each of the comma-separated values represented by X.
  *
- * @see SingletonPredicateExample
+ * @see SingleResultPredicateExample
  */
 public class RetryablePredicateExample extends AbstractPredicateFactory {
    @Override
    public Predicate getPredicate(Term arg1, Term arg2) {
       String csv = TermUtils.getAtomName(arg1);
       String[] split = csv.split(",");
-      return new Predicate(split, arg2);
+      return new RetryablePredicate(split, arg2);
    }
 
-   private static class Predicate extends AbstractPredicate {
+   private static class RetryablePredicate implements Predicate {
       private final String[] split;
       private final Term target;
       private int idx;
 
-      Predicate(String[] split, Term target) {
+      RetryablePredicate(String[] split, Term target) {
          this.split = split;
          this.target = target;
       }

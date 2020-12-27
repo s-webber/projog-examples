@@ -3,7 +3,7 @@
 
 ## About
 
-This project contains examples of using [Projog](http://www.projog.org/). Projog is an implementation of the [Prolog](https://en.wikipedia.org/wiki/Prolog) programming language for the Java platform.
+This project contains examples of how the open source [Projog](http://projog.org "Prolog interpreter for Java") library can be used to integrate Java with [Prolog](https://en.wikipedia.org/wiki/Prolog).
 
 `calling-java-from-prolog` provides an example of how you can interact with a Prolog inference engine from a Java application.
 
@@ -13,5 +13,5 @@ This project contains examples of using [Projog](http://www.projog.org/). Projog
 
 ## See Also
 
-* [Projog Website](http://www.projog.org/)
+* [Projog Website](http://projog.org)
 * [Projog GitHub Page](https://github.com/s-webber/projog)

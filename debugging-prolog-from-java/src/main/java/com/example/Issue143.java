@@ -4,7 +4,6 @@ import java.io.File;
 
 import org.projog.api.Projog;
 import org.projog.api.QueryResult;
-import org.projog.api.QueryStatement;
 import org.projog.core.term.Term;
 import org.projog.core.term.TermType;
 
@@ -13,21 +12,20 @@ import org.projog.core.term.TermType;
  */
 public class Issue143 {
    public static void main(String[] args) {
-      // create a new Projog instance with an Observer that will receive notification of debug events
-      CallStackObserver observer = new CallStackObserver();
-      CallStack stack = observer.getCallstack();
-      Projog p = new Projog(observer);
+      // create a new Projog instance with an ProjogListener that will receive notification of debug events
+      CallStackListener listener = new CallStackListener();
+      CallStack stack = listener.getCallstack();
+      Projog p = new Projog(listener);
 
       // consult file containing rules and facts
       p.consultFile(new File("src/main/resources/Issue143.pl"));
 
       // call "trace" built-in predicate to enable debugging
-      // see: http://www.projog.org/prolog-debugging.html
-      p.query("trace.").getResult().next();
+      // see: http://projog.org/prolog-debugging.html
+      p.executeOnce("trace.");
 
       System.out.println("FIRST QUERY");
-      QueryStatement s1 = p.query("testRule(X, Y).");
-      QueryResult r1 = s1.getResult();
+      QueryResult r1 = p.createStatement("testRule(X, Y).").executeQuery();
       while (r1.next()) {
          System.out.println("---------------------------------------");
          System.out.println("ANSWER: X = " + r1.getTerm("X") + " Y = " + r1.getTerm("Y"));
@@ -38,8 +36,7 @@ public class Issue143 {
       stack.clear();
 
       System.out.println("SECOND QUERY");
-      QueryStatement s2 = p.query("testRule(roomA, roomC).");
-      QueryResult r2 = s2.getResult();
+      QueryResult r2 = p.createStatement("testRule(roomA, roomC).").executeQuery();
       while (r2.next()) {
          System.out.println("---------------------------------------");
          log(stack);
@@ -55,7 +52,7 @@ public class Issue143 {
             first = false;
          }
 
-         System.out.println("Matched " + e.getPredicateKey() + " clause number " + e.getClauseNumber());
+         System.out.println("Matched " + e.getPredicateKey());
          System.out.println("Clause: " + e.getFormattedClause());
          System.out.println("Fact?   " + isFact(e));
          System.out.println("Output: " + e.getFormattedOutput());
@@ -80,7 +77,7 @@ public class Issue143 {
     * </p>
     */
    private static boolean isFact(CallStack.Element e) {
-      Term antecedant = e.getClauseModel().getAntecedant();
+      Term antecedant = e.getClauseModel().getAntecedent();
       return antecedant.getType() == TermType.ATOM && antecedant.getName().equals("true");
    }
 }

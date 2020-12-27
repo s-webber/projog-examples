@@ -1,455 +1,455 @@
 FIRST QUERY
 ANSWER: lisa is the sister of bart
-Matched sister/2 clause number 1
+Matched sister/2
 Clause: sister(A, B) :- siblings(A, B) , female(B)
 Input:  sister(X, Y)
 Output: sister(bart, lisa)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(bart, lisa)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, bart)
 
-Matched father/2 clause number 1
+Matched father/2
 Clause: father(homer, bart)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(homer, bart)
 
-Matched mother/2 clause number 1
+Matched mother/2
 Clause: mother(marge, bart)
 Input:  mother(M, bart)
 Output: mother(marge, bart)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, lisa)
 
-Matched father/2 clause number 2
+Matched father/2
 Clause: father(homer, lisa)
-Input:  father(homer, Y)
+Input:  father(homer, C)
 Output: father(homer, lisa)
 
-Matched mother/2 clause number 2
+Matched mother/2
 Clause: mother(marge, lisa)
 Input:  mother(marge, lisa)
 Output: mother(marge, lisa)
 
-Matched female/1 clause number 2
+Matched female/1
 Clause: female(lisa)
 Input:  female(lisa)
 Output: female(lisa)
 
 ANSWER: maggie is the sister of bart
-Matched sister/2 clause number 1
+Matched sister/2
 Clause: sister(A, B) :- siblings(A, B) , female(B)
 Input:  sister(X, Y)
 Output: sister(bart, maggie)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(bart, maggie)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, bart)
 
-Matched father/2 clause number 1
+Matched father/2
 Clause: father(homer, bart)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(homer, bart)
 
-Matched mother/2 clause number 1
+Matched mother/2
 Clause: mother(marge, bart)
 Input:  mother(M, bart)
 Output: mother(marge, bart)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, maggie)
 
-Matched father/2 clause number 3
+Matched father/2
 Clause: father(homer, maggie)
-Input:  father(homer, Y)
+Input:  father(homer, C)
 Output: father(homer, maggie)
 
-Matched mother/2 clause number 3
+Matched mother/2
 Clause: mother(marge, maggie)
 Input:  mother(marge, maggie)
 Output: mother(marge, maggie)
 
-Matched female/1 clause number 3
+Matched female/1
 Clause: female(maggie)
 Input:  female(maggie)
 Output: female(maggie)
 
 ANSWER: maggie is the sister of lisa
-Matched sister/2 clause number 1
+Matched sister/2
 Clause: sister(A, B) :- siblings(A, B) , female(B)
 Input:  sister(X, Y)
 Output: sister(lisa, maggie)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(lisa, maggie)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, lisa)
 
-Matched father/2 clause number 2
+Matched father/2
 Clause: father(homer, lisa)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(homer, lisa)
 
-Matched mother/2 clause number 2
+Matched mother/2
 Clause: mother(marge, lisa)
 Input:  mother(M, lisa)
 Output: mother(marge, lisa)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, maggie)
 
-Matched father/2 clause number 3
+Matched father/2
 Clause: father(homer, maggie)
-Input:  father(homer, Y)
+Input:  father(homer, C)
 Output: father(homer, maggie)
 
-Matched mother/2 clause number 3
+Matched mother/2
 Clause: mother(marge, maggie)
 Input:  mother(marge, maggie)
 Output: mother(marge, maggie)
 
-Matched female/1 clause number 3
+Matched female/1
 Clause: female(maggie)
 Input:  female(maggie)
 Output: female(maggie)
 
 ANSWER: lisa is the sister of maggie
-Matched sister/2 clause number 1
+Matched sister/2
 Clause: sister(A, B) :- siblings(A, B) , female(B)
 Input:  sister(X, Y)
 Output: sister(maggie, lisa)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(maggie, lisa)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, maggie)
 
-Matched father/2 clause number 3
+Matched father/2
 Clause: father(homer, maggie)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(homer, maggie)
 
-Matched mother/2 clause number 3
+Matched mother/2
 Clause: mother(marge, maggie)
 Input:  mother(M, maggie)
 Output: mother(marge, maggie)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, lisa)
 
-Matched father/2 clause number 2
+Matched father/2
 Clause: father(homer, lisa)
-Input:  father(homer, Y)
+Input:  father(homer, C)
 Output: father(homer, lisa)
 
-Matched mother/2 clause number 2
+Matched mother/2
 Clause: mother(marge, lisa)
 Input:  mother(marge, lisa)
 Output: mother(marge, lisa)
 
-Matched female/1 clause number 2
+Matched female/1
 Clause: female(lisa)
 Input:  female(lisa)
 Output: female(lisa)
 
 SECOND QUERY
 ANSWER: bart is the brother of lisa
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(lisa, bart)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(lisa, bart)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, lisa)
 
-Matched father/2 clause number 2
+Matched father/2
 Clause: father(homer, lisa)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(homer, lisa)
 
-Matched mother/2 clause number 2
+Matched mother/2
 Clause: mother(marge, lisa)
 Input:  mother(M, lisa)
 Output: mother(marge, lisa)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, bart)
 
-Matched father/2 clause number 1
+Matched father/2
 Clause: father(homer, bart)
-Input:  father(homer, Y)
+Input:  father(homer, C)
 Output: father(homer, bart)
 
-Matched mother/2 clause number 1
+Matched mother/2
 Clause: mother(marge, bart)
 Input:  mother(marge, bart)
 Output: mother(marge, bart)
 
-Matched male/1 clause number 2
+Matched male/1
 Clause: male(bart)
 Input:  male(bart)
 Output: male(bart)
 
 ANSWER: bart is the brother of maggie
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(maggie, bart)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(maggie, bart)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, maggie)
 
-Matched father/2 clause number 3
+Matched father/2
 Clause: father(homer, maggie)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(homer, maggie)
 
-Matched mother/2 clause number 3
+Matched mother/2
 Clause: mother(marge, maggie)
 Input:  mother(M, maggie)
 Output: mother(marge, maggie)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, bart)
 
-Matched father/2 clause number 1
+Matched father/2
 Clause: father(homer, bart)
-Input:  father(homer, Y)
+Input:  father(homer, C)
 Output: father(homer, bart)
 
-Matched mother/2 clause number 1
+Matched mother/2
 Clause: mother(marge, bart)
 Input:  mother(marge, bart)
 Output: mother(marge, bart)
 
-Matched male/1 clause number 2
+Matched male/1
 Clause: male(bart)
 Input:  male(bart)
 Output: male(bart)
 
 ANSWER: todd is the brother of rod
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(rod, todd)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(rod, todd)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(ned, maude, rod)
 
-Matched father/2 clause number 4
+Matched father/2
 Clause: father(ned, rod)
-Input:  father(F, X)
+Input:  father(F, C)
 Output: father(ned, rod)
 
-Matched mother/2 clause number 4
+Matched mother/2
 Clause: mother(maude, rod)
 Input:  mother(M, rod)
 Output: mother(maude, rod)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(ned, maude, Y)
+Input:  parents(ned, maude, B)
 Output: parents(ned, maude, todd)
 
-Matched father/2 clause number 5
+Matched father/2
 Clause: father(ned, todd)
-Input:  father(ned, Y)
+Input:  father(ned, C)
 Output: father(ned, todd)
 
-Matched mother/2 clause number 5
+Matched mother/2
 Clause: mother(maude, todd)
 Input:  mother(maude, todd)
 Output: mother(maude, todd)
 
-Matched male/1 clause number 5
+Matched male/1
 Clause: male(todd)
 Input:  male(todd)
 Output: male(todd)
 
 ANSWER: rod is the brother of todd
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(todd, rod)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(todd, rod)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(ned, maude, Y)
+Input:  parents(F, M, A)
 Output: parents(ned, maude, todd)
 
-Matched father/2 clause number 5
+Matched father/2
 Clause: father(ned, todd)
-Input:  father(ned, Y)
+Input:  father(F, C)
 Output: father(ned, todd)
 
-Matched mother/2 clause number 5
+Matched mother/2
 Clause: mother(maude, todd)
 Input:  mother(M, todd)
 Output: mother(maude, todd)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(ned, maude, Y)
+Input:  parents(ned, maude, B)
 Output: parents(ned, maude, rod)
 
-Matched father/2 clause number 4
+Matched father/2
 Clause: father(ned, rod)
-Input:  father(ned, Y)
+Input:  father(ned, C)
 Output: father(ned, rod)
 
-Matched mother/2 clause number 4
+Matched mother/2
 Clause: mother(maude, rod)
 Input:  mother(maude, rod)
 Output: mother(maude, rod)
 
-Matched male/1 clause number 4
+Matched male/1
 Clause: male(rod)
 Input:  male(rod)
 Output: male(rod)
 
 THIRD QUERY
 ANSWER: bart is the brother of lisa
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(lisa, bart)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(lisa, bart)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, lisa)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, bart)
 
 ANSWER: bart is the brother of maggie
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(maggie, bart)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(maggie, bart)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(homer, marge, maggie)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(homer, marge, Y)
+Input:  parents(homer, marge, B)
 Output: parents(homer, marge, bart)
 
 ANSWER: todd is the brother of rod
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(rod, todd)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(rod, todd)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(F, M, X)
+Input:  parents(F, M, A)
 Output: parents(ned, maude, rod)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(ned, maude, Y)
+Input:  parents(ned, maude, B)
 Output: parents(ned, maude, todd)
 
 ANSWER: rod is the brother of todd
-Matched brother/2 clause number 1
+Matched brother/2
 Clause: brother(A, B) :- siblings(A, B) , male(B)
 Input:  brother(X, Y)
 Output: brother(todd, rod)
 
-Matched siblings/2 clause number 1
+Matched siblings/2
 Clause: siblings(A, B) :- parents(F, M, A) , parents(F, M, B) , \+ A == B
-Input:  siblings(X, Y)
+Input:  siblings(A, B)
 Output: siblings(todd, rod)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(ned, maude, Y)
+Input:  parents(F, M, A)
 Output: parents(ned, maude, todd)
 
-Matched parents/3 clause number 1
+Matched parents/3
 Clause: parents(F, M, C) :- father(F, C) , mother(M, C)
-Input:  parents(ned, maude, Y)
+Input:  parents(ned, maude, B)
 Output: parents(ned, maude, rod)
 

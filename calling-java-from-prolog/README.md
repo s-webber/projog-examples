@@ -2,7 +2,7 @@
 
 ## About
 
-Provides examples of how to extend the functionality of Prolog by writing new built-in predicates and arithmetic operations using Java.
+Provides examples of how the open source [Projog](http://projog.org "Prolog interpreter for Java") library can be used to to extend the functionality of [Prolog](https://en.wikipedia.org/wiki/Prolog) by writing new built-in predicates and arithmetic operations in Java.
 
 `src/main/java/com/example/SingletonPredicateExample.java` demonstrates how to add a built-in predicate.
 

@@ -2,7 +2,7 @@
 
 ## About
 
-Provides an example of how you can interact with a Prolog inference engine from a Java application.
+Provides an example of how you can interact with a [Prolog](https://en.wikipedia.org/wiki/Prolog) inference engine from a Java application. The open source [Projog](http://projog.org "Prolog interpreter for Java") library is used to integrate Java with Prolog.
 
 `src/main/java/com/example/ProjogExample.java` demonstrates how to:
 

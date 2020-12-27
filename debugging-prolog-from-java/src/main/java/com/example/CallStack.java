@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.projog.core.PredicateKey;
-import org.projog.core.SpyPoints.SpyPointEvent;
-import org.projog.core.event.ProjogEvent;
-import org.projog.core.event.ProjogEventType;
-import org.projog.core.udp.ClauseModel;
+import org.projog.core.event.SpyPoints.SpyPointEvent;
+import org.projog.core.event.SpyPoints.SpyPointExitEvent;
+import org.projog.core.predicate.PredicateKey;
+import org.projog.core.predicate.udp.ClauseModel;
 
 class CallStack implements Iterable<CallStack.Element> {
    private final List<Element> elements = new ArrayList<>();
@@ -17,54 +16,69 @@ class CallStack implements Iterable<CallStack.Element> {
       elements.clear();
    }
 
-   void record(ProjogEvent projogEvent) {
-      ProjogEventType type = projogEvent.getType();
-      if (type == ProjogEventType.CALL) {
-         called(projogEvent);
-      } else if (type == ProjogEventType.EXIT) {
-         matched((SpyPointEvent) projogEvent.getDetails());
-      } else if (type == ProjogEventType.FAIL) {
-         failed((SpyPointEvent) projogEvent.getDetails());
-      } else if (type == ProjogEventType.REDO) {
-         retrying(projogEvent);
+   void called(SpyPointEvent spyPointEvent) {
+      Element e = new Element(spyPointEvent, spyPointEvent.getSourceId());
+      for (int i = 0; i < elements.size(); i++) {
+         if (elements.get(i).orphaned) {
+            removeTrailingElements(i);
+            break;
+         }
       }
-   }
-
-   private void called(ProjogEvent projogEvent) {
-      SpyPointEvent spyPointEvent = (SpyPointEvent) projogEvent.getDetails();
-      Element e = new Element(spyPointEvent, projogEvent.getSource());
       elements.add(e);
    }
 
-   private void matched(SpyPointEvent event) {
-      for (int i = elements.size() - 1; i >= 0; i--) {
-         Element element = elements.get(i);
-         if (event.getPredicateKey().equals(element.getPredicateKey())) {
-            element.second = event;
-            return;
-         } else if (element.second == null) {
-            elements.remove(i);
-         }
+   private void removeTrailingElements(final int startIdx) {
+      for (int i = elements.size() - 1; i >= startIdx; i--) {
+         elements.remove(i);
       }
    }
 
-   private void failed(SpyPointEvent event) {
-      for (int i = elements.size() - 1; i >= 0; i--) {
+   void matched(SpyPointExitEvent spyPointEvent) {
+      for (int i = elements.size() - 1; i > -1; i--) {
+         Element element = elements.get(i);
+         if (isSameSource(spyPointEvent, element)) {
+            element.second = spyPointEvent;
+            element.orphaned = false;
+            unorphanPrecedingElements(i);
+            return;
+         }
+      }
+      throw new RuntimeException();
+   }
+
+   private void unorphanPrecedingElements(final int subsequentIdx) {
+      for (int i = subsequentIdx - 1; i > -1; i--) {
+         elements.get(i).orphaned = false;
+      }
+   }
+
+   void failed(SpyPointEvent spyPointEvent) {
+      for (int i = elements.size() - 1; i > -1; i--) {
          Element element = elements.get(i);
          elements.remove(i);
-         if (event.getPredicateKey().equals(element.getPredicateKey())) {
+         if (isSameSource(spyPointEvent, element)) {
             return;
          }
       }
+      throw new RuntimeException();
    }
 
-   private void retrying(ProjogEvent projogEvent) {
-      for (Element element : elements) {
-         if (element.source == projogEvent.getSource()) {
+   void retrying(SpyPointEvent spyPointEvent) {
+      for (int i = elements.size() - 1; i > -1; i--) {
+         Element element = elements.get(i);
+         if (isSameSource(spyPointEvent, element)) {
             element.second = null;
+            element.orphaned = false;
             return;
+         } else {
+            element.orphaned = true;
          }
       }
+      throw new RuntimeException();
+   }
+
+   private static boolean isSameSource(SpyPointEvent spyPointEvent, Element element) {
+      return element.sourceId == spyPointEvent.getSourceId();
    }
 
    @Override
@@ -73,21 +87,18 @@ class CallStack implements Iterable<CallStack.Element> {
    }
 
    static class Element {
-      private final Object source;
+      private final int sourceId;
       private final SpyPointEvent first;
-      private SpyPointEvent second;
+      private SpyPointExitEvent second;
+      private boolean orphaned;
 
-      private Element(SpyPointEvent first, Object source) {
+      private Element(SpyPointEvent first, int sourceId) {
          this.first = first;
-         this.source = source;
+         this.sourceId = sourceId;
       }
 
       PredicateKey getPredicateKey() {
          return first.getPredicateKey();
-      }
-
-      int getClauseNumber() {
-         return second.getClauseNumber();
       }
 
       String getFormattedClause() {

@@ -41,12 +41,6 @@ public class ProjogExampleTest {
       assertEquals(EXPECTED_OUTPUT, redirectedOut.toString().replace(System.lineSeparator(), "\n"));
    }
 
-   @Test
-   public void testInterpretedModeExample() {
-      PrologInterpretedModeExample.main(new String[0]);
-      assertEquals(EXPECTED_OUTPUT, redirectedOut.toString().replace(System.lineSeparator(), "\n"));
-   }
-
    @After
    public void restoreStreams() {
       System.setOut(originalOut);

@@ -2,12 +2,12 @@ package com.example;
 
 import static org.projog.core.term.TermUtils.getAtomName;
 
-import org.projog.core.function.AbstractSingletonPredicate;
+import org.projog.core.predicate.AbstractSingleResultPredicate;
 import org.projog.core.term.Atom;
 import org.projog.core.term.Term;
 
 /* TEST
- ?- pj_add_predicate(uppercase/2, 'com.example.SingletonPredicateExample').
+ ?- pj_add_predicate(uppercase/2, 'com.example.SingleResultPredicateExample').
 
  %TRUE uppercase('hello, world!', 'HELLO, WORLD!')
  %TRUE uppercase('hello, everyone!', 'HELLO, EVERYONE!')
@@ -27,7 +27,7 @@ import org.projog.core.term.Term;
  *
  * @see RetryablePredicateExample
  */
-public class SingletonPredicateExample extends AbstractSingletonPredicate {
+public class SingleResultPredicateExample extends AbstractSingleResultPredicate {
    @Override
    public boolean evaluate(Term term1, Term term2) {
       Atom upperCaseTerm1 = new Atom(getAtomName(term1).toUpperCase());
