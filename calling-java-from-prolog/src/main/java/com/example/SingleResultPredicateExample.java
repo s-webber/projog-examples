@@ -11,14 +11,14 @@ import org.projog.core.term.Term;
 
  %TRUE uppercase('hello, world!', 'HELLO, WORLD!')
  %TRUE uppercase('hello, everyone!', 'HELLO, EVERYONE!')
- %FALSE uppercase('hello, word!', 'HELLO, WORLD!')
- %FALSE uppercase('hello, word!', 42)
- %FALSE uppercase('HELLO, WORLD!', 'hello, world!')
+ %FAIL uppercase('hello, word!', 'HELLO, WORLD!')
+ %FAIL uppercase('hello, word!', 42)
+ %FAIL uppercase('HELLO, WORLD!', 'hello, world!')
 
- %QUERY uppercase('hello, world!', X)
- %ANSWER X=HELLO, WORLD!
+ %?- uppercase('hello, world!', X)
+ % X=HELLO, WORLD!
 
- %QUERY uppercase(X, 'HELLO, WORLD!')
+ %?- uppercase(X, 'HELLO, WORLD!')
  %ERROR Expected an atom but got: VARIABLE with value: X
  */
 /**

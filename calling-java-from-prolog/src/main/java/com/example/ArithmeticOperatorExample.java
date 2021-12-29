@@ -6,19 +6,19 @@ import org.projog.core.math.AbstractUnaryArithmeticOperator;
  ?- pj_add_arithmetic_operator(triple/1, 'com.example.ArithmeticOperatorExample').
 
  %TRUE 9 is triple(3)
- %FALSE 9 is triple(4)
+ %FAIL 9 is triple(4)
 
- %QUERY X is triple(0)
- %ANSWER X=0
+ %?- X is triple(0)
+ % X=0
 
- %QUERY X is triple(1)
- %ANSWER X=3
+ %?- X is triple(1)
+ % X=3
 
- %QUERY X is triple(147)
- %ANSWER X=441
+ %?- X is triple(147)
+ % X=441
 
- %QUERY X is triple(-42.5)
- %ANSWER X=-127.5
+ %?- X is triple(-42.5)
+ % X=-127.5
  */
 /**
  * <code>triple</code> - multiples the given number by 3.

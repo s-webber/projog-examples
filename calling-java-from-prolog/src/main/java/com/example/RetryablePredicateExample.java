@@ -9,28 +9,28 @@ import org.projog.core.term.TermUtils;
 /* TEST
  ?- pj_add_predicate(split/2, 'com.example.RetryablePredicateExample').
 
- %QUERY split('dog,cat,bird', X)
- %ANSWER X=dog
- %ANSWER X=cat
- %ANSWER X=bird
+ %?- split('dog,cat,bird', X)
+ % X=dog
+ % X=cat
+ % X=bird
 
- %QUERY split('b,a,n,a,n,a', a)
- %ANSWER/
- %ANSWER/
- %ANSWER/
+ %?- split('b,a,n,a,n,a', a)
+ %YES
+ %YES
+ %YES
 
  %TRUE_NO split('a,b,c', a)
  %TRUE split('a,b,c', c)
- %FALSE split('a,b,c', z)
+ %FAIL split('a,b,c', z)
 
- %QUERY split(X, a)
+ %?- split(X, a)
  %ERROR Expected an atom but got: VARIABLE with value: X
 
- %QUERY split(42, a)
+ %?- split(42, a)
  %ERROR Expected an atom but got: INTEGER with value: 42
 
  %TRUE split('3,6,9', '9')
- %FALSE split('3,6,9', 9)
+ %FAIL split('3,6,9', 9)
  */
 /**
  * <code>split(X,Y)</code> - compares Y to each of the comma-separated values represented by X.
