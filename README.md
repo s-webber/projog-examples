@@ -13,5 +13,12 @@ This project contains examples of how the open source [Projog](http://projog.org
 
 ## See Also
 
+Examples of larger applications where Projog is used to integrate rules written in Prolog with a graphical user interface written in Java:
+
+* [Prolog Expert System](https://github.com/s-webber/prolog-expert-system)
+* [Prolog Wumpus World](https://github.com/s-webber/prolog-wumpus-world)
+
+For more information on Projog see:
+
 * [Projog Website](http://projog.org)
 * [Projog GitHub Page](https://github.com/s-webber/projog)
