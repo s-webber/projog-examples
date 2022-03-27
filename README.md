@@ -9,7 +9,7 @@ This project contains examples of how the open source [Projog](http://projog.org
 
 `calling-prolog-from-java` provides examples of how to extend the functionality of Prolog by writing new built-in predicates and arithmetic operations using Java. This project also contains examples of how you can unit test the new functionality using the Projog test framework.
 
-`debugging-prolog-from-java` provides an example of how to obtaining debug information for Prolog queries called from a Java application.
+`debugging-prolog-from-java` provides an example of how to obtain debug information for Prolog queries called from a Java application.
 
 ## See Also
 
