@@ -1,5 +1,4 @@
 # Projog Examples
-[![Build Status](https://travis-ci.org/s-webber/projog-examples.png?branch=master)](https://travis-ci.org/s-webber/projog-examples)
 
 ## About
 
