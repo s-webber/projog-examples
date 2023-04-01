@@ -11,6 +11,8 @@ This project contains examples of how the open source [Projog](http://projog.org
 
 `debugging-prolog-from-java` provides an example of how to obtain debug information for Prolog queries called from a Java application.
 
+`tfilter` provides an example of how to use `tfilter/3` in Prolog queries called from a Java application.
+
 ## See Also
 
 Examples of larger applications where Projog is used to integrate rules written in Prolog with a graphical user interface written in Java:
