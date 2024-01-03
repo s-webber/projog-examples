@@ -1,4 +1,5 @@
 # Projog Examples
+[![Build Status](https://github.com/s-webber/projog-examples/actions/workflows/github-actions.yml/badge.svg)](https://github.com/s-webber/projog-examples/actions/)
 
 ## About
 
